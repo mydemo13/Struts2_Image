@@ -3,11 +3,14 @@ ARG tomcat_version=7
 FROM tomcat:${tomcat_version}
 
 ARG struts2_version=2.3.12
-ARG owner_email="tomcat@paloaltonetworks.com"
+ARG owner_email="tomcat@local"
 
 LABEL product="tomcat"
 LABEL team="tomcat Team"
 LABEL owner_email=${owner_email}
+
+ENV MYSQL_HOST="DB_Server"
+ENV MYSQL_PASSWORD="asdfghjklzxcvbnm"
 
 RUN apt-get update
 RUN apt-get -y install curl git nmap dnsutils 

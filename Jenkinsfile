@@ -20,7 +20,7 @@ node {
     
     stage('pushImage') {
         try {
-            docker.withRegistry('https://docker.io', 'github_creds') {
+            docker.withRegistry('', 'github_creds') {
                 app.push("${env.BUILD_NUMBER}")
                 app.push("${env.struts2_version}")
             }

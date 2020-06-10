@@ -8,7 +8,7 @@ ARG owner_email="tomcat@local"
 LABEL product="tomcat"
 LABEL team="tomcat Team"
 LABEL owner_email=${owner_email}
-LABEL sequence=1
+LABEL sequence=2
 
 ENV MYSQL_HOST="DB_Server"
 ENV MYSQL_PASSWORD="asdfghjklzxcvbnm"

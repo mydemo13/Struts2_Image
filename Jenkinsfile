@@ -21,17 +21,17 @@ node {
     stage('pushImage') {
         try {
             docker.withRegistry('https://jfrogfx3-docker.jfrog.io', 'jfrog_creds') {
-#            docker.withRegistry('', 'github_creds') {
+//            docker.withRegistry('', 'github_creds') {
                 app.push("${env.BUILD_NUMBER}")
-#                app.push("${env.struts2_version}")
+//                app.push("${env.struts2_version}")
             }
         }catch(error) {
             echo "1st push failed, retrying"
             retry(5) {
                 docker.withRegistry('https://jfrogfx3-docker.jfrog.io', 'jfrog_creds') {
-#                docker.withRegistry('', 'github_creds') {
+//                docker.withRegistry('', 'github_creds') {
                     app.push("${env.BUILD_NUMBER}")
-#                    app.push("${env.struts2_version}")
+//                    app.push("${env.struts2_version}")
                 }
             }
         }

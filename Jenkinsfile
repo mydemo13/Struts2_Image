@@ -12,7 +12,7 @@ node {
     }
     
     stage('twistlockScan') {
-        prismaCloudScanImage ca: '', cert: '', dockerAddress: 'unix:///var/run/docker.sock', image: "mydemo13/struts2_demo:${env.struts2_version}_build", key: '', logLevel: 'debug', podmanPath: '', project: '', resultsFile: 'prisma-cloud-scan-results.json', ignoreImageBuildTime: true
+        prismaCloudScanImage ca: '', cert: '', dockerAddress: 'unix:///var/run/docker.sock', image: "mydemo13/struts2_demo:${env.BUILD_NUMBER}", key: '', logLevel: 'debug', podmanPath: '', project: '', resultsFile: 'prisma-cloud-scan-results.json', ignoreImageBuildTime: true
     }
     
     stage('twistlockPublish') {

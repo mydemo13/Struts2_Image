@@ -6,7 +6,8 @@ node {
     }
 
     stage('buildImage') {
-        app = docker.build("mydemo13/struts2_demo:${env.struts2_version}_build", "--build-arg owner_email=${env.owner_email} --build-arg struts2_version=${env.struts2_version} --build-arg tomcat_version=${env.tomcat_version} .")
+//        app = docker.build("mydemo13/struts2_demo:${env.struts2_version}_build", "--build-arg owner_email=${env.owner_email} --build-arg struts2_version=${env.struts2_version} --build-arg tomcat_version=${env.tomcat_version} .")
+        app = docker.build("mydemo13/struts2_demo:${env.BUILD_NUMBER}", "--build-arg owner_email=${env.owner_email} --build-arg struts2_version=${env.struts2_version} --build-arg tomcat_version=${env.tomcat_version} .")
         echo app.id
     }
     
